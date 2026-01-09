@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  --screen-sm: 425px;
+  --screen-md: 768px;
+  --screen-2md: 980px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1920px;
+}
+
+
+:root {
+  /* Surface colors */
+  --surface-primary: #ffffff;
+  --surface-secondary: #F3EDE7;
+  --surface-tertiary: #ffffff;
+
+  /* Text colors */
+  --text-primary: #374151;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  /* Border colors */
+  --border-primary: #E8E0D8;
+  --border-secondary: #E5E7EB;
+
+  /* Accent colors */
+  --accent-primary: #ff8585;
+  --accent-secondary: #ffd7cf;
+
+  /* Interactive states */
+  --hover-bg: #F3EDE7;
+
+  /* Transition */
+  --transition-base: 0.3s ease;
+}
+
+/* Dark mode overrides */
+.dark {
+  --surface-primary: #2a2d35;
+  --surface-secondary: #2a2d35;
+  --surface-tertiary: #2c2f38;
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #c5c7d1;
+  --text-muted: #8e919d;
+
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --border-secondary: rgba(255, 255, 255, 0.12);
+
+  --accent-primary: #f25b4d;
+  --accent-secondary: #352725;
+
+  --hover-bg: #2f323c;
+}
+
+body {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.app-shell {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+}
+
+.main-content {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+}
+
+/* Card */
+.card {
+  background-color: var(--surface-tertiary);
+  border-color: var(--border-secondary);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  background-color: var(--surface-tertiary);
+  border-color: var(--border-secondary);
+  color: var(--text-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Button */
+.btn-primary {
+  background-color: var(--accent-primary);
+}
+
+/* HR */
+hr {
+  border-color: var(--border-secondary);
+}
+
+/* Shadows in dark mode */
+.dark .shadow,
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg {
+  --tw-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Override Tailwind classes for theme compatibility */
+.dark .bg-white {
+  background-color: var(--surface-tertiary);
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: var(--surface-secondary);
+}
+
+.dark .text-gray-900 {
+  color: var(--text-primary);
+}
+
+.dark .text-gray-700,
+.dark .text-gray-800 {
+  color: #e2e8f0;
+}
+
+.dark .text-gray-600 {
+  color: #cbd5e0;
+}
+
+.dark .text-gray-500 {
+  color: var(--text-secondary);
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: var(--border-secondary);
+}
+
+/* Legacy accent color overrides */
+.dark .bg-\[\#FFD7CF\] {
+  background-color: var(--accent-secondary);
+}
+
+.dark .bg-\[\#FF8585\] {
+  background-color: #e05252;
+}
+
+.dark .text-\[\#FF8585\] {
+  color: var(--accent-primary);
+}
+
+.dark .hover\:bg-\[\#FFBDB0\]:hover {
+  background-color: #4a3d3d;
+}
+
+.navbar-container {
+  background-color: var(--surface-primary);
+  border-color: var(--border-primary);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.navbar-container .nav-link,
+.navbar-container .nav-dropdown-item,
+.navbar-container .topic-chip,
+.navbar-container .icon-button {
+  color: var(--text-secondary);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar-container .nav-link:hover,
+.navbar-container .nav-dropdown-item:hover,
+.navbar-container .topic-chip:hover,
+.navbar-container .icon-button:hover {
+  color: var(--text-primary);
+  background-color: var(--hover-bg);
+}
+
+.navbar-container .nav-link-active,
+.navbar-container .mobile-nav-link {
+  color: var(--text-primary);
+}
+
+.navbar-container .nav-dropdown,
+.navbar-container .mobile-menu {
+  background-color: var(--surface-primary);
+  border-color: var(--border-primary);
+}
+
+.navbar-container .mobile-nav-link:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Shimmer animation for skeleton loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Cluster Page enhancements */
+.cluster-hero-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), transparent);
+}
+
+.cluster-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cluster-card:hover {
+  transform: translateY(-4px);
+}
