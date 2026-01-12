@@ -132,14 +132,14 @@ const NewsGridCard = ({ news, index, variant = 'default' }) => {
           <div className="p-4 sm:p-5">
             {/* Category Badge */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="inline-flex items-center px-2.5 py-1 bg-gradient-to-r from-rose-100 to-orange-100 dark:from-rose-900/40 dark:to-orange-900/40 text-rose-600 dark:text-rose-400 text-xs font-medium rounded-lg">
+              <span className="inline-flex items-center px-2.5 py-1 bg-[#1E3A5F]/10 dark:bg-[#60A5FA]/20 text-[#1E3A5F] dark:text-[#60A5FA] text-xs font-medium rounded-lg">
                 <Icon icon="ph:newspaper-duotone" className="w-3.5 h-3.5 mr-1" />
                 News
               </span>
             </div>
 
             {/* Title */}
-            <h3 className={`font-bold text-gray-900 dark:text-white mb-3 group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors duration-300 ${isLarge ? 'text-xl md:text-2xl line-clamp-3' : 'text-base sm:text-lg line-clamp-2'}`}>
+            <h3 className={`font-bold text-gray-900 dark:text-white mb-3 transition-colors duration-300 ${isLarge ? 'text-xl md:text-2xl line-clamp-3' : 'text-base sm:text-lg line-clamp-2'}`}>
               {news.title}
             </h3>
 
@@ -232,15 +232,13 @@ const ClusterPage = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-1.5 h-8 bg-rose-400 rounded-full" />
+              <div className="w-1.5 h-8 bg-[#E87C2A] rounded-full" />
               <span className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Cluster News
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-              <span className="bg-red-400 bg-clip-text text-transparent">
-                {clusterName}
-              </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#E87C2A] dark:text-[#E87C2A]">
+              {clusterName}
             </h1>
           </div>
 
@@ -251,7 +249,7 @@ const ClusterPage = () => {
               transition={{ delay: 0.3 }}
               className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full"
             >
-              <Icon icon="ph:article-duotone" className="w-5 h-5 text-rose-500" />
+              <Icon icon="ph:article-duotone" className="w-5 h-5 text-[#E87C2A]" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {newsArray.length} articles found
               </span>
@@ -272,13 +270,13 @@ const ClusterPage = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-8 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border border-red-200 dark:border-red-800/50 rounded-2xl text-center"
+          className="p-8 bg-white dark:bg-[#1E293B] border border-[#E87C2A]/30 dark:border-[#E87C2A]/30 rounded-2xl text-center"
         >
-          <Icon icon="ph:warning-circle-duotone" className="w-16 h-16 mx-auto text-red-400 mb-4" />
-          <h3 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">
+          <Icon icon="ph:warning-circle-duotone" className="w-16 h-16 mx-auto text-[#E87C2A] mb-4" />
+          <h3 className="text-xl font-bold text-[#1E3A5F] dark:text-white mb-2">
             Oops! Something went wrong
           </h3>
-          <p className="text-red-500 dark:text-red-300">
+          <p className="text-gray-600 dark:text-gray-400">
             {error.message || "Failed to load news details"}
           </p>
         </motion.div>
@@ -310,9 +308,9 @@ const ClusterPage = () => {
             >
               <button
                 onClick={handleLoadMore}
-                className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-rose-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+                className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-[#1E3A5F] dark:bg-[#60A5FA] text-white dark:text-[#0F172A] font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
               >
-                <span className="absolute inset-0 bg-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute inset-0 bg-[#1E3A5F] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2">
                   <Icon icon="ph:plus-circle-bold" className="w-5 h-5" />
                   Load More Articles
@@ -339,10 +337,10 @@ const ClusterPage = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-2xl text-center"
+          className="p-12 bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-gray-700 rounded-2xl text-center"
         >
-          <Icon icon="ph:newspaper-clipping-duotone" className="w-20 h-20 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
-          <h3 className="text-xl font-bold text-gray-600 dark:text-gray-300 mb-2">
+          <Icon icon="ph:newspaper-clipping-duotone" className="w-20 h-20 mx-auto text-[#1E3A5F]/30 dark:text-gray-600 mb-4" />
+          <h3 className="text-xl font-bold text-[#1E3A5F] dark:text-white mb-2">
             No News Found
           </h3>
           <p className="text-gray-500 dark:text-gray-400">

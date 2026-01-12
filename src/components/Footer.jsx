@@ -49,7 +49,7 @@ const Footer = () => {
       title: "TOPICS",
       links: featuredTopics.map((topic, index) => ({
         label: topic,
-        to: `/news/cluster/${index}`,
+        to: `/get-clusters/${index}`,
       })),
       placeholder: isLoadingTopics
         ? "Loading topics..."

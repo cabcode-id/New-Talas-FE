@@ -7,7 +7,7 @@ Talas adalah portal kurasi berita yang menampilkan topik terhangat, analisis lin
 - **Pencarian Kontekstual** – pencarian judul berita dengan debouncing di `SearchBar`, menampilkan hasil bertahap (`Load more`), dan status kosong yang komunikatif.
 - **Detail & Analisis** – halaman detail menyajikan ringkasan, analisis, daftar artikel pendukung, modal perbandingan, serta komponen `AlignmentBar` untuk memvisualkan spektrum ideologi.
 - **Katalog Klaster** – halaman `ClusterPage` menampilkan hero card + masonry grid dengan animasi Framer Motion dan skeleton shimmer.
-- **Navigasi Modern** – navbar responsif dengan dropdown kategori (data dari API `cluster/list`), dark mode toggle (persist di `localStorage`), dan Search Box yang mengisi query string.
+- **Navigasi Modern** – navbar responsif dengan dropdown kategori (data dari API `get-clusters`), dark mode toggle (persist di `localStorage`), dan Search Box yang mengisi query string.
 - **Kesiapan Deploy** – bundler Vite 6, konfigurasi Tailwind v4, `ThemeContext` untuk global styling, serta dukungan Docker + Nginx SPA routing.
 
 ## Teknologi & Dependency Inti
@@ -33,20 +33,6 @@ src/
 ├─ utils/               # Helper seperti formatDate
 └─ main.jsx             # Entry, BrowserRouter, ThemeProvider
 ```
-
-## Alur Data & Integrasi API
-Semua permintaan HTTP melewati `apiClient` (axios) yang diarahkan ke `import.meta.env.VITE_API_URL`. Endpoint yang aktif saat ini:
-
-| Service | Endpoint | Deskripsi |
-| --- | --- | --- |
-| `getNewsList` | `GET /news/` | Daftar berita terbaru untuk grid & sidebar |
-| `getTopNews` | `GET /news/top?limit=<n>` | Data headline + Top List |
-| `getNewsDetail` | `GET /news/detail?title_index=<id>` | Detail berita, artikel terkait, analisis |
-| `getNewsByCluster` | `GET /news/cluster?cluster=<index>` | Berita berdasarkan klaster/topik |
-| `getClusters` | `GET /cluster/list` | Nama klaster untuk navigasi & chip |
-| `searchNewsByTitle` | `GET /news/search-title?query=<keyword>` | Pencarian judul berita |
-
-Pastikan backend mengaktifkan CORS dan merespons dengan bentuk data seperti yang dikonsumsi oleh halaman (lihat `src/pages`).
 
 ## Persiapan Lingkungan
 1. Gunakan Node.js **>= 18.0.0** (disarankan versi LTS terbaru) & npm 10.
