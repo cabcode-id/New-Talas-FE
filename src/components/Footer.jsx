@@ -15,7 +15,7 @@ const Footer = () => {
         if (!isMounted) return;
 
         setTopics(Object.values(data?.clusters || {}));
-      // eslint-disable-next-line no-unused-vars
+        // eslint-disable-next-line no-unused-vars
       } catch (error) {
         if (isMounted) {
           setTopics([]);
@@ -84,7 +84,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link to="/home" className="inline-block mb-4">
-              <img src="/Talas.svg" alt="Talas" className="h-10" />
+              <img src="/talas1.svg" alt="Talas" className="h-20" />
             </Link>
             <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
               Menghadirkan rangkuman berita multi-sumber setiap hari dengan gaya
@@ -92,7 +92,7 @@ const Footer = () => {
             </p>
             <a
               href="http://pukulenam.id"
-              className="inline-flex items-center justify-center rounded px-6 py-2.5 text-sm font-semibold text-[#1a1a1a] bg-[#D4A84B] hover:bg-[#E0B85C] transition-all duration-200 active:scale-95"
+              className="subscribe-btn inline-flex items-center justify-center rounded px-6 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-95"
             >
               Subscribe
             </a>

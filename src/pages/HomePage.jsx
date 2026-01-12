@@ -18,6 +18,7 @@ function HomePage() {
   const [loadingTopNews, setLoadingTopNews] = useState(true);
   const [loadingTopNewsList, setLoadingTopNewsList] = useState(true);
   const [loadingClusterZeroNews, setLoadingClusterZeroNews] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [loadingClusters, setLoadingClusters] = useState(true);
   const { darkMode } = useDarkMode();
 
@@ -117,8 +118,8 @@ function HomePage() {
   const textClass = darkMode ? "text-white" : "text-black";
   const loadingBgClass = darkMode ? "bg-gray-700" : "bg-gray-100";
   const loadingTextClass = darkMode ? "text-gray-300" : "text-gray-500";
-  const errorBgClass = darkMode ? "bg-red-900" : "bg-red-100";
-  const errorTextClass = darkMode ? "text-red-300" : "text-red-500";
+  const errorBgClass = darkMode ? "bg-amber-900/30" : "bg-amber-100";
+  const errorTextClass = darkMode ? "text-amber-300" : "text-amber-600";
   const hrClass = darkMode ? "border-gray-700" : "border-gray-300";
 
   return (
@@ -161,7 +162,7 @@ function HomePage() {
         {/* Top News Sidebar - Right Side (40%) */}
         <div className="w-full lg:w-[40%]">
           <div className="flex items-center gap-2 h-8 mb-4">
-            <div className="w-[4px] h-full bg-red-500 rounded-full" />
+            <div className="w-[4px] h-full bg-[var(--brand-navy)] rounded-full" />
             <h2 className="font-bold text-lg">Top News</h2>
           </div>
 
@@ -211,7 +212,7 @@ function HomePage() {
           {/* Left Column - Cluster 0 News using TopNews */}
           <div className="w-full lg:w-[30%]">
             <div className="flex items-center gap-2 h-8 mb-4 sm:mb-5">
-              <div className="w-[6px] h-full bg-red-500 rounded-full" />
+              <div className="w-[6px] h-full bg-[var(--brand-navy)] rounded-full" />
               <h2 className="font-bold text-lg sm:text-xl">{primaryClusterName}</h2>
             </div>
 
@@ -253,7 +254,7 @@ function HomePage() {
           {/* Right Column - Recent News Grid */}
           <div className="w-full lg:w-[70%]">
             <div className="flex items-center gap-2 h-8 mb-4 sm:mb-5">
-              <div className="w-[6px] h-full bg-red-500 rounded-full" />
+              <div className="w-[6px] h-full bg-[var(--brand-navy)] rounded-full" />
               <h2 className="font-bold text-lg sm:text-xl">Recent News</h2>
             </div>
 
@@ -308,7 +309,7 @@ function HomePage() {
             "hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           }
           activeClassName={
-            "bg-red-500 text-white dark:bg-red-400 dark:text-white border-red-500 dark:border-red-400"
+            "bg-[var(--brand-navy)] text-white border-[var(--brand-navy)]"
           }
           previousClassName={
             "px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 " +

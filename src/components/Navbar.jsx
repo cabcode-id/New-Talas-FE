@@ -118,8 +118,8 @@ function Navbar() {
               {/* Logo */}
               <Link to="/home" className="flex items-center">
                 <img
-                  className="h-10 w-auto"
-                  src="/Talas.svg"
+                  className="h-15 w-auto"
+                  src="/talas1.svg"
                   alt="Talas"
                 />
               </Link>
@@ -203,7 +203,7 @@ function Navbar() {
               {/* Subscribe Button - Golden/Amber like Ground News */}
               <a
                 href="http://pukulenam.id"
-                className="whitespace-nowrap rounded px-4 py-1.5 text-sm font-semibold text-[#1a1a1a] bg-[#D4A84B] hover:bg-[#E0B85C] transition-colors active:scale-95"
+                className="subscribe-btn whitespace-nowrap rounded px-4 py-1.5 text-sm font-semibold active:scale-95"
               >
                 Subscribe
               </a>
@@ -305,7 +305,7 @@ function Navbar() {
             <div className="pt-6 mt-6 border-t">
               <a
                 href="http://pukulenam.id"
-                className="flex items-center justify-center w-full rounded-lg px-4 py-3 text-base font-bold text-[#1a1a1a] bg-[#D4A84B] active:scale-95 transition-transform"
+                className="subscribe-btn flex items-center justify-center w-full rounded-lg px-4 py-3 text-base font-bold active:scale-95 transition-transform"
               >
                 Subscribe
               </a>

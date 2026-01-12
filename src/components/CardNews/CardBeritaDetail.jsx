@@ -67,7 +67,7 @@ const ComparisonModal = memo(({ isOpen, onClose }) => {
           <button
             onClick={onClose}
             type="button"
-            className="px-5 py-2.5 text-sm font-medium text-white bg-[#FF7C7C] rounded-lg hover:bg-[#FF6B6B] transition-colors duration-200 shadow-sm"
+            className="px-5 py-2.5 text-sm font-medium text-white bg-[var(--brand-navy)] rounded-lg hover:bg-[var(--brand-navy-light)] transition-colors duration-200 shadow-sm"
           >
             Lihat Laporan Lengkap
           </button>
@@ -81,11 +81,11 @@ const ContentSection = memo(({ title, content }) => (
   <div className="px-3 rounded-xl mb-5">
     <div className="">
       <div className="flex items-center gap-2 h-8 mb-4 sm:mb-5 ">
-        <div className="w-[6px] h-full bg-red-500"/>
-        <h1 className={`font-bold text-xl sm:text-2xl  ${title.toLowerCase() == 'analysis' ? "text-gray-700" : "text-gray-500" }`}>{title}</h1>
+        <div className="w-[6px] h-full bg-[var(--brand-navy)] rounded-full" />
+        <h1 className={`font-bold text-xl sm:text-2xl  ${title.toLowerCase() == 'analysis' ? "text-gray-700" : "text-gray-500"}`}>{title}</h1>
       </div>
-    
-      <p className={`text-base leading-relaxed text-justify ${title.toLowerCase() == 'analysis' ? "text-gray-700" : "text-gray-500" }`}>
+
+      <p className={`text-base leading-relaxed text-justify ${title.toLowerCase() == 'analysis' ? "text-gray-700" : "text-gray-500"}`}>
         {content}
       </p>
     </div>
@@ -93,7 +93,7 @@ const ContentSection = memo(({ title, content }) => (
 ));
 
 // Main component
-function CardBeritaDetail({ data, rates, hideHeader=false}) {
+function CardBeritaDetail({ data, rates, hideHeader = false }) {
   if (!data || typeof data !== "object") return null;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -147,7 +147,7 @@ function CardBeritaDetail({ data, rates, hideHeader=false}) {
             <button
               onClick={toggleModal}
               type="button"
-              className="px-5 py-2 text-sm font-medium rounded-md bg-[#FF7C7C] hover:bg-[#FF5C5C] text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF7C7C]/50"
+              className="px-5 py-2 text-sm font-medium rounded-md bg-[var(--brand-navy)] hover:bg-[var(--brand-navy-light)] text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--brand-navy)]/50"
               aria-label="Buka perbandingan berita"
             >
               <span className="flex items-center">
@@ -171,7 +171,7 @@ function CardBeritaDetail({ data, rates, hideHeader=false}) {
         </div>
 
         <ContentSection title="Description" content={data.description} />
-        <ContentSection title="Analysis" content={data.analysis}  />
+        <ContentSection title="Analysis" content={data.analysis} />
       </div>
 
       <ComparisonModal isOpen={isModalOpen} onClose={toggleModal} />

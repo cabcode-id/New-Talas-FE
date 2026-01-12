@@ -13,24 +13,34 @@
 :root {
   /* Surface colors */
   --surface-primary: #ffffff;
-  --surface-secondary: #F3EDE7;
+  --surface-secondary: #F5F7FA;
   --surface-tertiary: #ffffff;
 
   /* Text colors */
-  --text-primary: #374151;
-  --text-secondary: #6B7280;
-  --text-muted: #9CA3AF;
+  --text-primary: #1E3A5F;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
 
   /* Border colors */
-  --border-primary: #E8E0D8;
-  --border-secondary: #E5E7EB;
+  --border-primary: #E2E8F0;
+  --border-secondary: #CBD5E0;
+
+  /* Brand colors - matching TALAS.NEWS logo */
+  --brand-navy: #1E3A5F;
+  --brand-navy-light: #2D4A6F;
+  --brand-orange: #E87C2A;
+  --brand-orange-light: #C95F1F;
 
   /* Accent colors */
-  --accent-primary: #ff8585;
-  --accent-secondary: #ffd7cf;
+  --accent-primary: #1E3A5F;
+  --accent-secondary: #E87C2A;
 
   /* Interactive states */
-  --hover-bg: #F3EDE7;
+  --hover-bg: #EDF2F7;
+
+  /* Logo text color - ensures visibility */
+  --logo-text: #1E3A5F;
+  --logo-subtext: #718096;
 
   /* Transition */
   --transition-base: 0.3s ease;
@@ -38,21 +48,32 @@
 
 /* Dark mode overrides */
 .dark {
-  --surface-primary: #2a2d35;
-  --surface-secondary: #2a2d35;
-  --surface-tertiary: #2c2f38;
+  --surface-primary: #0F172A;
+  --surface-secondary: #1E293B;
+  --surface-tertiary: #1E293B;
 
-  --text-primary: #f5f5f7;
-  --text-secondary: #c5c7d1;
-  --text-muted: #8e919d;
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
 
-  --border-primary: rgba(255, 255, 255, 0.08);
-  --border-secondary: rgba(255, 255, 255, 0.12);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.15);
 
-  --accent-primary: #f25b4d;
-  --accent-secondary: #352725;
+  /* Brand colors for dark mode - brighter for visibility */
+  --brand-navy: #60A5FA;
+  --brand-navy-light: #93C5FD;
+  --brand-orange: #E87C2A;
+  --brand-orange-light: #C95F1F;
 
-  --hover-bg: #2f323c;
+  /* Accent colors for dark mode */
+  --accent-primary: #60A5FA;
+  --accent-secondary: #E87C2A;
+
+  --hover-bg: #334155;
+
+  /* Logo text color - brighter in dark mode for visibility */
+  --logo-text: #F1F5F9;
+  --logo-subtext: #94A3B8;
 }
 
 body {
@@ -141,21 +162,44 @@ hr {
   border-color: var(--border-secondary);
 }
 
-/* Legacy accent color overrides */
+/* Legacy accent color overrides - now using brand colors */
 .dark .bg-\[\#FFD7CF\] {
-  background-color: var(--accent-secondary);
+  background-color: rgba(251, 146, 60, 0.2);
 }
 
-.dark .bg-\[\#FF8585\] {
-  background-color: #e05252;
+.dark .bg-\[\#FF8585\],
+.dark .bg-\[\#FF6666\],
+.dark .bg-\[\#FF6B6B\] {
+  background-color: var(--brand-navy);
 }
 
 .dark .text-\[\#FF8585\] {
-  color: var(--accent-primary);
+  color: var(--brand-navy);
 }
 
-.dark .hover\:bg-\[\#FFBDB0\]:hover {
-  background-color: #4a3d3d;
+.dark .hover\:bg-\[\#FFBDB0\]:hover,
+.dark .hover\:bg-\[\#FF6666\]:hover {
+  background-color: var(--brand-navy-light);
+}
+
+/* Subscribe button styling */
+.subscribe-btn {
+  background-color: var(--brand-orange);
+  color: #1a1a1a;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: var(--brand-orange-light);
+}
+
+.dark .subscribe-btn {
+  background-color: var(--brand-orange);
+  color: #1a1a1a;
+}
+
+.dark .subscribe-btn:hover {
+  background-color: var(--brand-orange-light);
 }
 
 .navbar-container {
@@ -193,6 +237,27 @@ hr {
 
 .navbar-container .mobile-nav-link:hover {
   background-color: var(--hover-bg);
+}
+
+/* Logo visibility in dark mode - applies to navbar and footer */
+.dark img[alt="Talas"] {
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition-base);
+}
+
+/* Brand accent bars (replacing red-500) */
+.brand-accent-bar {
+  background-color: var(--brand-navy);
+}
+
+.dark .brand-accent-bar {
+  background-color: var(--brand-navy);
+}
+
+/* Pagination active state */
+.dark .pagination-active {
+  background-color: var(--brand-navy);
+  border-color: var(--brand-navy);
 }
 
 /* Shimmer animation for skeleton loading */
