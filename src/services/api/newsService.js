@@ -1,27 +1,27 @@
 import apiClient from "./httpClient";
 
 export const getNewsList = async () => {
-  const response = await apiClient.get("get-news");
+  const response = await apiClient.get("news/");
   return response.data;
 };
 
 export const getTopNews = async (limit = 1) => {
-  const response = await apiClient.get("top-news", {
+  const response = await apiClient.get("news/top", {
     params: { limit },
   });
   return response.data;
 };
 
 export const getNewsDetail = async (titleIndex) => {
-  const response = await apiClient.get(
-    `get-news-detail?title_index=${encodeURIComponent(titleIndex)}`
-  );
+  const response = await apiClient.get("news/detail", {
+    params: { titleIndex: titleIndex },
+  });
   return response.data;
 };
 
 export const getNewsByCluster = async (clusterIndex) => {
-  const response = await apiClient.get(
-    `get-cluster-news?cluster=${encodeURIComponent(clusterIndex)}`
-  );
+const response = await apiClient.get("news/cluster", {
+  params: { cluster: clusterIndex },
+});
   return response.data;
 };
