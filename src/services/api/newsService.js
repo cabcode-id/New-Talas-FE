@@ -14,7 +14,7 @@ export const getTopNews = async (limit = 1) => {
 
 export const getNewsDetail = async (titleIndex) => {
   const response = await apiClient.get("news/detail", {
-    params: { titleIndex: titleIndex },
+    params: { title_index: Number(titleIndex) },
   });
   return response.data;
 };
